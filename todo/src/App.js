@@ -1,5 +1,6 @@
 import "./App.scss";
-import { useState } from 'react';
+import { useState } from "react";
+import axios from "axios";
 import Header from "./components/molecules/Header";
 import TodoTitle from "./components/molecules/TodoTitle";
 import HistoryList from "./components/molecules/HistoryList";
@@ -8,10 +9,10 @@ import TodoListItem from "./components/molecules/TodoListItem";
 import TodoList from "./components/molecules/TodoList";
 import TodoListWrap from "./components/molecules/TodoListWrap";
 
-fetch('url', { method: 'POST', })
+// fetch('url', { method: 'POST', })
 
+axios.get("/todos").then((data) => console.log(data));
 function App() {
-
   const [isHide, setHide] = useState(true);
 
   const toggleClickHandler = () => {
