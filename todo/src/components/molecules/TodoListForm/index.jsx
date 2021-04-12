@@ -4,10 +4,11 @@ import styled from "styled-components";
 const StyledForm = styled.form`
   position: relative;
   width: 308px;
-  padding: 16px;
-  margin: 16px;
+  padding: 15px;
+  margin-bottom: 10px;
   background: #fff;
-  border-radius: 5px;
+  border: 2px black solid;
+  border-radius: 10px;
 `;
 
 const TodoList = ({

@@ -6,31 +6,30 @@ import TodoTitle from "../molecules/TodoTitle";
 import TodoListForm from "../molecules/TodoListForm";
 import TodoListColumn from "../molecules/TodoListColumn";
 // add 이벤트 구현
-
-// <ButtonList isIcon={false} />
-// <ButtonList isIcon />
-
 const TodoContent = () => {
   return (
     <TodoListWrap>
       <TodoListColumn>
-        <TodoTitle>1번</TodoTitle>
+        <TodoTitle>해야할 일</TodoTitle>
+        <TodoListForm>
+          <TodoListInput></TodoListInput>
+        </TodoListForm>
         <TodoListForm>
           <TodoListInput></TodoListInput>
         </TodoListForm>
       </TodoListColumn>
 
       <TodoListColumn>
-        <TodoTitle>2번</TodoTitle>
+        <TodoTitle>하고 있는 일</TodoTitle>
         <TodoListForm>
-          <TodoListItem></TodoListItem>
+          <TodoListItem>값을 넣어주세요</TodoListItem>
         </TodoListForm>
       </TodoListColumn>
 
       <TodoListColumn>
-        <TodoTitle>3번</TodoTitle>
+        <TodoTitle>완료한 일</TodoTitle>
         <TodoListForm>
-          <TodoListItem></TodoListItem>
+          <TodoListItem>값을 넣어주세요</TodoListItem>
         </TodoListForm>
       </TodoListColumn>
     </TodoListWrap>

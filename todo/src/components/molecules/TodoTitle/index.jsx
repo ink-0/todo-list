@@ -9,28 +9,23 @@ import ButtonList from "../ButtonList";
 
 const WrapDiv = styled.div`
   display: flex;
-  width: 308px;
-  padding: 15px;
+  width: 318px;
+  padding: 0px 10px;
   justify-content: space-between;
   place-items: center;
-  width: 300px;
-  margin: 15px;
-  background-color: white;
 `;
 
 const LeftDiv = styled.div`
   display: flex;
   place-items: center;
   font-size: 20px;
-  font-size: 700;
+  font-weight: 700;
 `;
 
 const TodoTitle = ({ children, ...props }) => (
   <WrapDiv>
     <LeftDiv>
-      <Span _fontSize="20px" _fontWeight="700">
-        {children}
-      </Span>
+      <div>{children}</div>
       <Label>10</Label>
     </LeftDiv>
     <div>
