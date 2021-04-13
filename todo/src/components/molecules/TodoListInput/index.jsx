@@ -9,6 +9,17 @@ import styled from "styled-components";
 import { useState } from "react";
 
 const Div = styled.div`
+  position: relative;
+  width: 308px;
+  padding: 16px;
+  margin: 16px;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+`;
+
+const BuutonDiv = styled.div`
   text-align: center;
   margin: 15px 0 0 0;
 `;
@@ -22,7 +33,7 @@ const TodoListInput = ({ title, content, toggleActions }) => {
   };
 
   return (
-    <>
+    <Div>
       <SmallButton _position="absolute" _right="3px">
         <Image src={closeButton} _width="10px" />
       </SmallButton>
@@ -36,10 +47,10 @@ const TodoListInput = ({ title, content, toggleActions }) => {
         onChange={(e) => onChange(setContent, e)}
         value={contentValue}
       />
-      <Div>
+      <BuutonDiv>
         <ButtonList toggleActions={toggleActions} />
-      </Div>
-    </>
+      </BuutonDiv>
+    </Div>
   );
 };
 

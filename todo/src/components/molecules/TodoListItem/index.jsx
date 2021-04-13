@@ -1,40 +1,47 @@
 import React from "react";
-import { useEffect, useState, useRef } from "react";
+import { useState, useRef } from "react";
 import SmallButton from "../../atoms/Buttons/SmallButton";
 import Image from "../../atoms/Image";
 import Span from "../../atoms/Span";
 import closeButton from "../../../images/closeButton.svg";
+import styled, { css } from "styled-components";
+
+const Div = styled.div`
+  position: relative;
+  width: 308px;
+  padding: 16px;
+  margin: 16px;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+`;
 
 const TodoListItem = ({ title, content, author }) => {
-  const useClick = (onClick) => {
-    const element = useRef();
-    useEffect(() => {
-      if (element.current) {
-        console.log("클릭되었다");
-        element.current.addEventListener("click", onClick);
-      }
-      return () => {
-        if (element.current) {
-          element.current.removeEventListener("click", onClick);
-        }
-      };
-    }, []);
-    return element;
+  const ToItem = useRef();
+  const clickClose = (e) => {
+    e.preventDefault();
+    console.log("closeclick");
   };
 
-  const sayhello = () => console.log("say hello");
-  const close = useClick(sayhello);
-
-  // const clickClose = (e) => {
-  //   e.preventDefault();
-  //   console.log("closeclick");
-  // };
-
   return (
-    <>
-      <SmallButton _position="absolute" _right="3px" ref={close}>
+    <Div hover ref={ToItem}>
+      <SmallButton
+        _position="absolute"
+        _right="3px"
+        onClick={clickClose}
+        onMouseOver={() => (
+          (ToItem.current.style.backgroundColor = "#ffe7ef"),
+          (ToItem.current.style.border = "2px solid #f20553")
+        )}
+        onMouseOut={() => (
+          (ToItem.current.style.backgroundColor = "white"),
+          (ToItem.current.style.border = "2px solid #000")
+        )}
+      >
         <Image src={closeButton} _width="10px" />
       </SmallButton>
+
       <Span _display="block" _color="#000" _fontSize="17px" _fontWeight="700">
         {title}
       </Span>
@@ -44,7 +51,7 @@ const TodoListItem = ({ title, content, author }) => {
       <Span _display="block" _color="#969595" _fontSize="13px">
         {author}
       </Span>
-    </>
+    </Div>
   );
 };
 

@@ -1,24 +1,7 @@
-import TodoListInput from '../TodoListInput';
-import TodoListItem from '../TodoListItem';
+import TodoListInput from "../TodoListInput";
+import TodoListItem from "../TodoListItem";
 import styled, { css } from "styled-components";
-import useToggle from '../../../hooks/useToggle';
-
-const Div = styled.div`
-  position: relative;
-  width: 308px;
-  padding: 16px;
-  margin: 16px;
-  background: #fff;
-  border: 2px solid #000;
-  border-radius: 5px;
-  cursor: pointer;
-  ${({ hover }) => hover && css`
-        &:hover{
-        border:2px solid blue;
-        background: #e0efff;
-      }
-  `}
-`;
+import useToggle from "../../../hooks/useToggle";
 
 const TodoSwitch = ({ title, content, author }) => {
   const [isInput, toggleActions] = useToggle(false);
@@ -27,21 +10,19 @@ const TodoSwitch = ({ title, content, author }) => {
 
   if (isInput) {
     template = (
-      <Div>
-        <TodoListInput  {...{ title, content, toggleActions }} />
-      </Div>);
+      <div>
+        <TodoListInput {...{ title, content, toggleActions }} />
+      </div>
+    );
   } else {
     template = (
-      <Div hover onClick={toggleActions.toggle}>
+      <div onClick={toggleActions.toggle}>
         <TodoListItem {...{ title, content, author }} />
-      </Div>);
+      </div>
+    );
   }
 
-  return (
-    <>
-      {template}
-    </>
-  )
-}
+  return <>{template}</>;
+};
 
 export default TodoSwitch;

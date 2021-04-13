@@ -1,18 +1,21 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import TodoTitle from "../../molecules/TodoTitle";
 import TodoSwitch from "../../molecules/TodoSwitch";
 
 const Div = styled.div`
   margin: 5px;
+  ${({ hover }) =>
+    hover &&
+    css`
+      &:hover {
+        border: 2px solid #62afb7;
+        background: #dfefea;
+      }
+    `}
 `;
 
 const TodoListColumn = ({ columnName, items }) => {
-  const clickClose = (e) => {
-    e.preventDefault();
-    console.log("closeclick");
-  };
-
   return (
     <Div>
       <TodoTitle itemCount={items.length}>{columnName}</TodoTitle>
