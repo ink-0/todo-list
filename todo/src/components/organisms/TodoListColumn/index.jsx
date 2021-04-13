@@ -8,6 +8,11 @@ const Div = styled.div`
 `;
 
 const TodoListColumn = ({ columnName, items }) => {
+  const clickClose = (e) => {
+    e.preventDefault();
+    console.log("closeclick");
+  };
+
   return (
     <Div>
       <TodoTitle itemCount={items.length}>{columnName}</TodoTitle>
@@ -16,7 +21,8 @@ const TodoListColumn = ({ columnName, items }) => {
           <TodoSwitch key={id} {...{ title, content, author }}></TodoSwitch>
         );
       })}
-    </Div>);
+    </Div>
+  );
 };
 
 export default TodoListColumn;

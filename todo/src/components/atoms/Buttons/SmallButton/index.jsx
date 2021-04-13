@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const SmallButton = styled.button`
-  position: ${props => props._position};
+  position: ${(props) => props._position};
   width: 40px;
   height: 40px;
   border: none;

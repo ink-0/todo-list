@@ -7,8 +7,8 @@ const useToggle = (initialValue = true) => {
     value,
     {
       set: setValue,
-      toggle: () => setValue(flag => !flag)
-    }
+      toggle: () => setValue((flag) => !flag),
+    },
   ];
 };
 
