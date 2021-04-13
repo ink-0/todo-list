@@ -25,10 +25,10 @@ const TodoListItem = ({ title, content, author }) => {
   const sayhello = () => console.log("say hello");
   const close = useClick(sayhello);
 
-  const clickClose = (e) => {
-    e.preventDefault();
-    console.log("closeclick");
-  };
+  // const clickClose = (e) => {
+  //   e.preventDefault();
+  //   console.log("closeclick");
+  // };
 
   return (
     <>

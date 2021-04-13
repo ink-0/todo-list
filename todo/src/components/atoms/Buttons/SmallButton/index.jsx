@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { ref } from "react";
 
 const SmallButton = styled.button`
   position: ${(props) => props._position};
@@ -16,8 +17,10 @@ const SmallButton = styled.button`
   }
 `;
 
-const Button = ({ children, ...props }) => (
-  <SmallButton {...props}>{children}</SmallButton>
-);
+const Button = React.forwardRef((props, ref) => (
+  <SmallButton ref={ref} {...props}>
+    {props.children}
+  </SmallButton>
+));
 
 export default Button;
