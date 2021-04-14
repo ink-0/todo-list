@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import TodoTitle from "../../molecules/TodoTitle";
-import TodoListInput from "../../molecules/TodoListInput";
 import TodoSwitch from "../../molecules/TodoSwitch";
 import useToggle from "../../../hooks/useToggle";
 const Div = styled.div`

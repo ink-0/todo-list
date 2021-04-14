@@ -11,12 +11,7 @@ const StyledInput = styled.input`
   font-size: 16px;
   line-height: 23px;
   border: none;
-
-  /* Gray 3 */
-
   color: #828282;
-
-  /* Inside Auto Layout */
 `;
 
 const TitleInput = ({ type = "text", titleRef, ...props }) => (

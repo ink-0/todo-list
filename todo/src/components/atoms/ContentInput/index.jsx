@@ -15,14 +15,11 @@ const StyledInput = styled.input`
   font-size: 14px;
   line-height: 20px;
   border: none;
-
-  /* Gray 3 */
-
   color: #828282;
 `;
 
 const ContentInput = ({ type = "text", contentRef, ...props }) => (
-  <StyledInput type={type} ref={contentRef}{...props} />
+  <StyledInput type={type} ref={contentRef} {...props} />
 );
 
 export default ContentInput;

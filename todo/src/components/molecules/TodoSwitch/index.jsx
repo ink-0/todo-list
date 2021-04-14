@@ -1,6 +1,5 @@
 import TodoListInput from "../TodoListInput";
 import TodoListItem from "../TodoListItem";
-import styled, { css } from "styled-components";
 import useToggle from "../../../hooks/useToggle";
 
 const TodoSwitch = ({
