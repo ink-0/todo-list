@@ -6,6 +6,7 @@ import Header from "../../molecules/Header";
 import HistoryList from "../../organisms/HistoryList";
 import TodoListWrap from "../../templates/TodoListWrap";
 import styled from "styled-components";
+import Popup from "../../Popup";
 
 const Div = styled.div`
   border: 3px solid black;
@@ -35,6 +36,7 @@ function App() {
       <HistoryList isOpen={isOpen} isOpenActions={isOpenActions} />
       <Header isOpenActions={isOpenActions} />
       <TodoListWrap todos={todos}></TodoListWrap>
+      <Popup />
     </Div>
   );
 }

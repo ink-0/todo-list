@@ -14,9 +14,6 @@ const SmallButton = styled.button`
     border: none;
     outline: none;
   }
-  /* &:hover {
-    ${(props) => props._hover}
-  } */
 `;
 
 const Button = ({ children, ...props }) => (

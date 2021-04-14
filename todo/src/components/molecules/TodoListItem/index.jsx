@@ -19,6 +19,7 @@ const Div = styled.div`
 
 const TodoListItem = ({ title, content, author }) => {
   const ToItem = useRef();
+
   const clickClose = (e) => {
     e.preventDefault();
     console.log("closeclick");
