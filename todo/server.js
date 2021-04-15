@@ -27,7 +27,6 @@ server.patch("/todos", (req, res) => {
 
   res.send(db.get("todos").value());
 });
-
 server.put("/todos", (req, res) => {
   const { columnId, title, content, author } = req.query; //id 어떻게 할당?
   console.log(columnId, title, content);
@@ -45,7 +44,7 @@ server.post("/logs", (req, res) => {
     .push({ id: shortid.generate(), ...req.body })
     .write();
   res.send(db.get("logs").value());
-})
+});
 
 server.delete("/todos", (req, res) => {
   const { columnId, id } = req.query;

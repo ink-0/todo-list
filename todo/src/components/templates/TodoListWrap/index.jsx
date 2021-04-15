@@ -1,4 +1,4 @@
-import React, { useState, useEffect, memo } from "react";
+import { useState, useEffect, memo } from "react";
 import TodoListColumn from "../../organisms/TodoListColumn";
 import styled from "styled-components";
 import loadItems from "../../../serviceUtils/loadItems";
@@ -45,7 +45,9 @@ const TodoListWrap = ({ setHistories }) => {
               items,
               setHistories,
               setPopup,
+              idState,
               setIdState,
+              colState,
               setColState,
             }}
           />

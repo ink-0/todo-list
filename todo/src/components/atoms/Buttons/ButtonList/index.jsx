@@ -64,7 +64,6 @@ const ButtonList = ({
     const response = await axios.delete(
       `/todos?columnId=${colState}&id=${idState}`
     );
-    console.log("delete 는", response);
     setPopup("none");
     setTodos(() => response.data);
   };

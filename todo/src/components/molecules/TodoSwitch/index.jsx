@@ -15,8 +15,11 @@ const TodoSwitch = ({
   setHistories,
   columnName,
   setPopup,
+  idState,
   setIdState,
+  colState,
   setColState,
+  itemInfo,
 }) => {
   const [isInput, toggleActions2] = useToggle(false);
   let isPatch = true; //추가인지 수정인지를 알 수있는 flag를 enrollClickHandler에 전달하기 위함
@@ -70,7 +73,9 @@ const TodoSwitch = ({
             author,
             setHistories,
             setPopup,
+            idState,
             setIdState,
+            colState,
             setColState,
           }}
         />
@@ -79,7 +84,23 @@ const TodoSwitch = ({
   }
 
   return (
-    <Card id={id} className="card" draggable="true">
+    <Card
+      id={id}
+      columnId={columnId}
+      className="card"
+      draggable="true"
+      {...{
+        title,
+        content,
+        author,
+        setTodos,
+        idState,
+        setIdState,
+        colState,
+        setColState,
+        itemInfo,
+      }}
+    >
       {template}
     </Card>
   );

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 import TodoTitle from "../../molecules/TodoTitle";
 import TodoListInput from "../../molecules/TodoListInput";
@@ -15,10 +16,14 @@ const TodoListColumn = ({
   items,
   setHistories,
   setPopup,
+  idState,
   setIdState,
+  colState,
   setColState,
 }) => {
   const [isClicked, toggleActions] = useToggle(false);
+  const itemInfo = { current: null };
+
   let template;
   if (!isClicked) {
     template = (
@@ -44,8 +49,11 @@ const TodoListColumn = ({
                 author,
                 setHistories,
                 setPopup,
+                idState,
                 setIdState,
+                colState,
                 setColState,
+                itemInfo,
               }}
             ></TodoSwitch>
           );
@@ -67,8 +75,11 @@ const TodoListColumn = ({
             setTodos,
             setHistories,
             setPopup,
+            idState,
             setIdState,
+            colState,
             setColState,
+            itemInfo,
           }}
         />
         {items.map(({ id, title, content, author }) => {
@@ -85,8 +96,11 @@ const TodoListColumn = ({
                 author,
                 setHistories,
                 setPopup,
+                idState,
                 setIdState,
+                colState,
                 setColState,
+                itemInfo,
               }}
             ></TodoSwitch>
           );
@@ -95,7 +109,21 @@ const TodoListColumn = ({
     );
   }
 
-  return <Board id={columnId}>{template}</Board>;
+  return (
+    <Board
+      id={columnId}
+      {...{
+        setTodos,
+        idState,
+        setIdState,
+        colState,
+        setColState,
+        itemInfo,
+      }}
+    >
+      {template}
+    </Board>
+  );
 };
 
 export default TodoListColumn;

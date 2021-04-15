@@ -1,22 +1,41 @@
 import React from "react";
-
-const Card = props => {
-  const dragStart = e => {
+//여기요여기요여기요여기요
+const Card = ({
+  idState,
+  setIdState,
+  colState,
+  setColState,
+  title,
+  content,
+  author,
+  itemInfo,
+  ...props
+}) => {
+  const dragStart = (e) => {
     const target = e.target;
+    itemInfo.current = { title, content, author };
+
+    // console.log("🔥target", target.id);
+    // console.log("🔥columnId", props.columnId);
+    console.log("🔥title", title);
+    console.log("🔥content", content);
+    console.log("🔥author", author);
     e.dataTransfer.setData("cardId", target.id);
 
-    setTimeout(() => {
-      console.log("card drag start", props.id);
-      target.style.display = "none";
-    }, 0);
+    setIdState(target.id);
+    setColState(props.columnId);
+    // setTimeout(() => {
+
+    //   // target.style.display = "none";
+    // }, 0);
   };
-  const dragOver = e => {
+  const dragOver = (e) => {
     e.stopPropagation();
     //console.log("card drag over");
   };
 
   const drop = () => {
-    console.log("card drop!!");
+    // console.log("card drop!!");
   };
 
   return (
