@@ -3,6 +3,7 @@ import TodoTitle from "../../molecules/TodoTitle";
 import TodoListInput from "../../molecules/TodoListInput";
 import TodoSwitch from "../../molecules/TodoSwitch";
 import useToggle from "../../../hooks/useToggle";
+import Board from "../../templates/Board";
 const Div = styled.div`
   margin: 5px;
 `;
@@ -94,7 +95,7 @@ const TodoListColumn = ({
     );
   }
 
-  return <>{template}</>;
+  return <Board id={columnId}>{template}</Board>;
 };
 
 export default TodoListColumn;

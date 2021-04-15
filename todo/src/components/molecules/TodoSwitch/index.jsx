@@ -2,7 +2,7 @@ import TodoListInput from "../TodoListInput";
 import TodoListItem from "../TodoListItem";
 import styled, { css } from "styled-components";
 import useToggle from "../../../hooks/useToggle";
-
+import Card from "../../templates/Card";
 const TodoSwitch = ({
   isClicked,
   columnId,
@@ -60,6 +60,7 @@ const TodoSwitch = ({
     template = (
       <div onClick={toggleActions2.toggle}>
         <TodoListItem
+          draggable="true"
           {...{
             setTodos,
             columnId,
@@ -77,7 +78,11 @@ const TodoSwitch = ({
     );
   }
 
-  return <>{template}</>;
+  return (
+    <Card id={id} className="card" draggable="true">
+      {template}
+    </Card>
+  );
 };
 
 export default TodoSwitch;

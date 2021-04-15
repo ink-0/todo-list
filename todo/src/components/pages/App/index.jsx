@@ -5,6 +5,8 @@ import HistoryList from "../../organisms/HistoryList";
 import TodoListWrap from "../../templates/TodoListWrap";
 import loadItems from "../../../serviceUtils/loadItems";
 import styled from "styled-components";
+import Board from "../../templates/Board";
+import Card from "../../templates/Card";
 
 const Div = styled.div`
   border: 3px solid black;
@@ -29,6 +31,17 @@ function App() {
           setHistories,
         }}
       ></TodoListWrap>
+
+      <Board id="board-1" className="board">
+        <Card id="card-1" className="card" draggable="true">
+          <p>card one</p>
+        </Card>
+      </Board>
+      <Board id="board-2" className="board">
+        <Card id="card-2" className="card" draggable="true">
+          <p>card Two</p>
+        </Card>
+      </Board>
     </Div>
   );
 }

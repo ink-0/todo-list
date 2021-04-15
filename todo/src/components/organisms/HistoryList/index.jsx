@@ -12,7 +12,7 @@ const WrapDiv = styled.div`
   height: 100%;
   padding: 15px;
   background: #fff;
-  right: ${(props) => (props.isOpen ? 3 : -480)}px;
+  right: ${props => (props.isOpen ? 3 : -480)}px;
   top: 3px;
   transition: all 1s;
   z-index: 1;
@@ -31,7 +31,7 @@ const HistoryList = ({ histories, isOpenActions, isOpen }) => {
           <Image _width="20px" src={closeButton} />
         </SmallButton>
       </ButtonDiv>
-      s
+
       <div>
         {histories.map(({ id, ...itemObject }) => (
           <HistoryItem key={id} itemObject={itemObject} />
